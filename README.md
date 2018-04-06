@@ -5,10 +5,28 @@
 **Description**
 
 This module conducts experiments on pattern code from the CLiPS (Computational Linguistics & Psycholinguistics) research centre. Two experiments are currently completed:
-* Checking the output of the Porter stemmer implemented in pattern against the output of the original implementation by Martin Porter.
-* Comparing the list of stop words currently used by pattern against other popular stop word lists to check whether an updation is required.
+* Checking the output of the Porter stemmer implemented in pattern against the output of the original implementation by Martin Porter. Performed by the `check` function of the `StemmerChecker` class.
+* Comparing the list of stop words currently used by pattern against other popular stop word lists to check whether an updation is required. Performed by the `find_important` and `compare` function of the `StemmerChecker` class.
 
-**List of Sources of Stopwords**
+**Results**
+
+* Porter stemmer output check: There were a total of 1043 errors (pattern Porter stemmer output does not match the output of the original implementation) found which are stored in the file `Check/errors.txt`.
+
+|word_input     | original_output| pattern_output  |
+|:-------------:|:--------------:|:---------------:|
+| admiringly    | admiringli  | admir           |
+| crying        | cry            |   cri           |
+| spy           | spy            |    spi          |
+
+* List of stopwords comparison: A total of 11 sources of stop words were used to compare with as linked in the appendix. For each source, the set of words present in the source but not in pattern's list of stop words and vice versa were reported in the corresponding file. Comparison output was stored in the directory `Results`
+
+**Dependencies**
+* pattern 2.6
+
+**Usage**
+
+
+**Appendix: List of Sources of Stopwords**
 
 1. unine.txt (formation retrieval multilingual resources from Universite de Neuchatel, Switzerland) [link](http://members.unine.ch/jacques.savoy/clef/englishST.txt)
 
