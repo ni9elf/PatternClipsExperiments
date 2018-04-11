@@ -4,13 +4,13 @@
 
 **Description**
 
-This module conducts experiments on pattern code from the CLiPS (Computational Linguistics & Psycholinguistics) research centre. Two experiments are currently completed:
-* Checking the output of the Porter stemmer implemented in pattern against the output of the original implementation by Martin Porter. Performed by the `check` function of the `StemmerChecker` class.
-* Comparing the list of stop words currently used by pattern against other popular stop word lists to check whether an updation is required. Performed by the `find_important` and `compare` function of the `StemmerChecker` class.
+This module conducts experiments on [pattern](https://github.com/clips/pattern) from the CLiPS (Computational Linguistics & Psycholinguistics) research centre. Two experiments are currently completed:
+* Checking the output of the Porter stemmer implemented in pattern against the output of the [original implementation](https://tartarus.org/martin/PorterStemmer/) by Martin Porter. Performed by the `check` function of the `StemmerChecker` class.
+* Comparing the list of stop words currently used by pattern's [vector module](https://github.com/clips/pattern/blob/master/pattern/vector/stopwords-en.txt) against other popular stop word lists to check whether an updation is required. Performed by the `find_important` and `compare` function of the `StemmerChecker` class.
 
 **Results**
 
-* Porter stemmer output check: There were a total of 1043 errors (pattern Porter stemmer output does not match the output of the original implementation) found which are stored in the file `Check/errors.txt`.
+* Porter stemmer output check: There were a total of 1043 errors (pattern Porter stemmer output does not match the output of the original implementation) found which are stored in the file `Check/errors.txt`. Sample errors are provided in the table below.
 
 |word_input     | original_output| pattern_output  |
 |:-------------:|:--------------:|:---------------:|
@@ -18,13 +18,15 @@ This module conducts experiments on pattern code from the CLiPS (Computational L
 | crying        | cry            |   cri           |
 | spy           | spy            |    spi          |
 
-* List of stopwords comparison: A total of 11 sources of stop words were used to compare with as linked in the appendix. For each source, the set of words present in the source but not in pattern's list of stop words and vice versa were reported in the corresponding file. Comparison output was stored in the directory `Results`
+* List of stopwords comparison: A total of 11 sources of stop words were used to compare with as linked in the appendix. For each source, the set of words present in the source but not in pattern's list of stop words and vice versa were reported in the corresponding file. Comparison output was stored in the directory `Results`.
 
 **Dependencies**
 * pattern 2.6
+* Python 2.7
 
 **Usage**
 
+Run `python stemmer_checker.py` to obtain experiment statistics.
 
 **Appendix: List of Sources of Stopwords**
 
