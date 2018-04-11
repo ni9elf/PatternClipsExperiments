@@ -5,12 +5,12 @@
 **Description**
 
 This module conducts experiments on [pattern](https://github.com/clips/pattern) from the CLiPS (Computational Linguistics & Psycholinguistics) research centre. Two experiments are currently completed:
-* Checking the output of the Porter stemmer implemented in pattern against the output of the [original implementation](https://tartarus.org/martin/PorterStemmer/) by Martin Porter. Performed by the `check` function of the `StemmerChecker` class.
+* Checking the output of the Porter stemmer implemented in pattern against the output of the [original implementation](http://snowball.tartarus.org/algorithms/english/stemmer.html) by Martin Porter. Performed by the `check` function of the `StemmerChecker` class.
 * Comparing the list of stop words currently used by pattern's [vector module](https://github.com/clips/pattern/blob/master/pattern/vector/stopwords-en.txt) against other popular stop word lists to check whether an update is required. Performed by the `find_important` and `compare` function of the `StemmerChecker` class.
 
 **Results**
 
-* Porter stemmer output check: There were a total of 1043 errors (pattern Porter stemmer output does not match the output of the original implementation) found which are stored in the file `Check/errors.txt`. Sample errors are provided in the table below.
+* Porter stemmer output check: There were a total of 215 errors (pattern Porter stemmer output does not match the output of the original implementation) found which are stored in the file `Check/errors.txt`. Sample errors are provided in the table below.
 
 |word_input     | original_output| pattern_output  |
 |:-------------:|:--------------:|:---------------:|
